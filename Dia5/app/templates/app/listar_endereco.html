@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Lista de Endereços</h1>
+<a href="{% url 'adicionar_endereco' %}" class="btn btn-primary">Adicionar Novo CEP</a>
+<ul>
+    {% for endereco in enderecos %}
+        <li>
+            {{ endereco.rua }}, {{ endereco.bairro }}, {{ endereco.cidade }} - {{ endereco.estado }}, CEP: {{ endereco.cep }}
+            <a href="{% url 'excluir_endereco' endereco.id %}" class="btn btn-danger btn-sm">Deletar</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Meu Site{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>Workshop Django</h1>
+        <nav>
+            <a href="{% url 'listar_enderecos' %}">Endereços</a> |
+            <a href="{% url 'adicionar_endereco' %}">Novo Endereço</a>
+        </nav>
+        <hr>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <hr>
+        <p>© 2025 - Meu Projeto Django</p>
+    </footer>
+</body>
+</html>
